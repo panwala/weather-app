@@ -13,7 +13,9 @@ request({url:url,json:true},(error,response)=>{
    else{
        const ans={wd:response.body.current.weather_descriptions[0],
         tp:response.body.current.temperature,
-        fl:response.body.current.feelslike
+        fl:response.body.current.feelslike,
+        hu:response.body.current.humidity,
+        ws:response.body.current.wind_speed,
         };
     callback(undefined,ans)
    }

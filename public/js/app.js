@@ -9,7 +9,7 @@ console.log("client side script is loaded");
   form.addEventListener('submit',(e)=>{
       e.preventDefault();
       console.log(input.value)
-      m1.textContent="Loading Weather Details ,";
+      m1.textContent="Loading Weather Details ";
       fetch('/weather?address= '+input.value+'').then((response)=>{
     response.json().then((data)=>{
         if(data.error)
@@ -18,7 +18,7 @@ console.log("client side script is loaded");
             
         }
         else{
-            m1.textContent="Temprature: "+data.tp+". Feels Like: "+data.fl+". Location: "+data.address;
+            m1.textContent="Temprature: "+data.tp+". Feels Like: "+data.fl+". Location: "+data.address+". Humidity: "+data.hu+". windspeed: "+data.ws;
         }
     })
 })

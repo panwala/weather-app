@@ -24,7 +24,7 @@ app.get('/weather',(req,res)=>{
             {
               return res.send(error);
             }
-              forecast(latitude,longitude, (error, {wd,tp,fl}={}) => {
+              forecast(latitude,longitude, (error, {wd,tp,fl,hu,ws}={}) => {
                 if(error)
                 {
                   return res.send(error);
@@ -33,7 +33,9 @@ app.get('/weather',(req,res)=>{
                     wd:wd,
                     tp:tp,
                     fl:fl,
-                    address:req.query.address
+                    address:req.query.address,
+                    hu:hu,
+                    ws:ws,
                 })
                 // console.log(location);
                 // console.log(wd,".",tp,".",fl);
