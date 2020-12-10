@@ -5,6 +5,7 @@ const geocode=require('./utils/geocode');
 const forecast=require('./utils/forecast');
 const hbs=require('hbs')
 const app=express();
+const port=process.env.PORT || 3000;
 console.log(path.join(__dirname,'../public'));
 app.set('views',path.join(__dirname,"../templates/views"))
 app.set('view engine','hbs')
@@ -62,6 +63,6 @@ app.get('*',(req,res)=>{
     res.render('error',{msg:' page not found',name:'prem panwala'})
 })
 
-app.listen(3000,()=>{
-    console.log("Server Started Succesfully!!");
+app.listen(port,()=>{
+    console.log("Server Started Succesfully on !!"+port);
 })

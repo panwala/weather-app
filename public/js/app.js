@@ -10,7 +10,7 @@ console.log("client side script is loaded");
       e.preventDefault();
       console.log(input.value)
       m1.textContent="Loading Weather Details ,";
-      fetch('http://localhost:3000/weather?address= '+input.value+'').then((response)=>{
+      fetch('/weather?address= '+input.value+'').then((response)=>{
     response.json().then((data)=>{
         if(data.error)
         {
